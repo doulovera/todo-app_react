@@ -4,10 +4,11 @@ import { AppS } from 'styles/App.style'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from 'styles/global'
 import { darkTheme, lightTheme } from 'styles/theme'
+import CreateNote from 'pages/CreateNote'
 import TodoHeader from 'components/Header'
 import TodoList from 'components/TodoList'
 import TodoItem from 'components/TodoItem'
-import Note from 'components/Note'
+import Note from 'pages/Note'
 import TodoCreateButton from 'components/TodoCreateButton'
 
 const FAKE_ARRAY = [
@@ -48,11 +49,8 @@ function App () {
         <Route path="/">
           <TodoList className="TodoList">
             {
-              FAKE_ARRAY.map(todo => (
-                <TodoItem key={todo.id} {...todo} />
-              ))
+              FAKE_ARRAY.map(todo => <TodoItem key={todo.id} {...todo} />)
             }
-            <article className="TodoItem"></article>
           </TodoList>
         </Route>
         <TodoCreateButton />
@@ -64,8 +62,9 @@ function App () {
         </Route>
 
         <Route path="/create">
-          <p>a</p>
+          <CreateNote />
         </Route>
+
       </AppS>
     </ThemeProvider>
   )
