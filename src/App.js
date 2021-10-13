@@ -44,6 +44,7 @@ function App () {
       <GlobalStyles />
       <AppS>
         <TodoHeader toggleDarkMode={toggleDarkMode} />
+
         <Route path="/">
           <TodoList className="TodoList">
             {
@@ -53,13 +54,17 @@ function App () {
             }
             <article className="TodoItem"></article>
           </TodoList>
-          <TodoCreateButton />
         </Route>
+        <TodoCreateButton />
 
         <Route path="/note/:id">
           {
             (params) => <Note id={params.id} />
           }
+        </Route>
+
+        <Route path="/create">
+          <p>a</p>
         </Route>
       </AppS>
     </ThemeProvider>
