@@ -10,6 +10,11 @@ export const HeaderTop = styled.div`
     flex: 1;
     font-size: 2rem;
   }
+
+  & h1 a {
+    color: var(--font);
+    text-decoration: none;
+  }
 `
 
 export const Nav = styled.nav`

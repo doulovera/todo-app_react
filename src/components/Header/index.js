@@ -1,11 +1,18 @@
 import React from 'react'
+import { Link } from 'wouter'
 import { HeaderTop, Nav, Tab } from './Header.style.js'
 
 export default function TodoHeader ({ toggleDarkMode }) {
   return (
-    <header>
+    <header style={{ marginBottom: '20px' }}>
       <HeaderTop>
-        <h1>Notes App 📝</h1>
+        <h1>
+          <Link href="/">
+            <a>
+              Notes App 📝
+            </a>
+          </Link>
+        </h1>
         <button onClick={toggleDarkMode}>🌓</button>
       </HeaderTop>
       <Nav>

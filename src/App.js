@@ -7,11 +7,13 @@ import { darkTheme, lightTheme } from 'styles/theme'
 import TodoHeader from 'components/Header'
 import TodoList from 'components/TodoList'
 import TodoItem from 'components/TodoItem'
+import Note from 'components/Note'
+import TodoCreateButton from 'components/TodoCreateButton'
 
 const FAKE_ARRAY = [
   {
     id: 1634015287752,
-    title: 'The task title',
+    title: 'La propiedad text-overflow ha de ser especificada usando uno o dos valores. Si se define solo un valor, este determinará el comportamiento del overflow para el final de la línea (el extremo derecho en un texto izquierda-a-derecha o el extremo izquierdo en un texto derecha-a-izquierda)',
     description: '# Hello world',
     done: false,
     color: 'blue'
@@ -51,11 +53,13 @@ function App () {
             }
             <article className="TodoItem"></article>
           </TodoList>
-          <div className="TodoCreate"></div>
+          <TodoCreateButton />
         </Route>
 
         <Route path="/note/:id">
-          <p>holi</p>
+          {
+            (params) => <Note id={params.id} />
+          }
         </Route>
       </AppS>
     </ThemeProvider>
