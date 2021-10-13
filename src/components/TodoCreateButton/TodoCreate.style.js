@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const Button = styled.a`
-  position: fixed;
+  /* position: fixed;
   right: 10%;
-  bottom: 20px;
+  bottom: 20px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  width: 50px;
-  font-size: 1.5rem;
+  height: 30px;
+  width: 30px;
+  font-size: 1rem;
   text-decoration: none;
   border: 2px solid var(--reverse);
   border-radius: 50%;

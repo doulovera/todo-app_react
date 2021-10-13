@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useRoute } from 'wouter'
 import { HeaderTop, Nav, Tab } from './Header.style.js'
 
-export default function TodoHeader ({ toggleDarkMode }) {
+export default function TodoHeader ({ children, toggleDarkMode }) {
   const [match] = useRoute('/create')
 
   return (
@@ -15,7 +15,7 @@ export default function TodoHeader ({ toggleDarkMode }) {
             </a>
           </Link>
         </h1>
-        <button onClick={toggleDarkMode}>🌓</button>
+        { children }
       </HeaderTop>
       {
         !match
