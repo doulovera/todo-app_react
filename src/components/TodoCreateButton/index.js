@@ -9,6 +9,7 @@ export default function TodoCreateButton () {
     <Link href={match ? '/create' : '/'}>
       <Button>
         {
+          // change emojis to icons
           match ? '➕' : '⬅️'
         }
       </Button>

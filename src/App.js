@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import { Route } from 'wouter'
-import { AppS } from 'styles/App.style'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from 'styles/global'
 import { darkTheme, lightTheme } from 'styles/theme'
+import useTasks from 'hooks/useTasks'
 import CreateNote from 'pages/CreateNote'
 import TodoHeader from 'components/Header'
 import TodoList from 'components/TodoList'
 import TodoItem from 'components/TodoItem'
 import Note from 'pages/Note'
 import TodoCreateButton from 'components/TodoCreateButton'
+import { AppS } from 'styles/App.style'
 
 const FAKE_ARRAY = [
   {
@@ -38,6 +39,16 @@ const FAKE_ARRAY = [
 function App () {
   const [isDarkMode, setIsDarkMode] = useState(true)
 
+  const {
+    tasks,
+    completedTasks,
+    notCompletedTasks,
+    status,
+    addTask,
+    removeTask,
+    toggleCompleteTask
+  } = useTasks()
+
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode)
 
   return (
@@ -49,10 +60,15 @@ function App () {
         </TodoHeader>
 
         <Route path="/">
-          <TodoList className="TodoList">
-            {
-              FAKE_ARRAY.map(todo => <TodoItem key={todo.id} {...todo} />)
-            }
+          <TodoList
+            className="TodoList"
+            status={status}
+            tasks={tasks}
+            onError={() => <h3 className="TodoList__alert TodoList__alert-error">An error has ocurred...</h3>}
+            onLoading={() => <TodoItem isLoading={true} />}
+            onEmpty={() => <h3 className="TodoList__alert">Use the &apos;+&apos; button to add a Task!</h3>}
+          >
+            { (task) => <TodoItem key={task.id} {...task} /> }
           </TodoList>
         </Route>
 
