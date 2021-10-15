@@ -9,7 +9,7 @@ import TodoHeader from 'components/Header'
 import TodoList from 'components/TodoList'
 import TodoItem from 'components/TodoItem'
 import Note from 'pages/Note'
-import TodoCreateButton from 'components/TodoCreateButton'
+import TodoHeaderButton from 'components/TodoHeaderButton'
 import { AppS } from 'styles/App.style'
 
 const FAKE_ARRAY = [
@@ -56,7 +56,7 @@ function App () {
       <GlobalStyles />
       <AppS>
         <TodoHeader toggleDarkMode={toggleDarkMode}>
-          <TodoCreateButton />
+          <TodoHeaderButton />
         </TodoHeader>
 
         <Route path="/">

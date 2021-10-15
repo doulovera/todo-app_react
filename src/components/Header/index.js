@@ -9,9 +9,10 @@ export default function TodoHeader ({ children, toggleDarkMode }) {
     <header style={{ marginBottom: '20px' }}>
       <HeaderTop>
         <h1>
+          <button onClick={toggleDarkMode}>🌓</button>
           <Link href="/">
             <a>
-              Notes App 📝
+              Notes App
             </a>
           </Link>
         </h1>

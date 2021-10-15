@@ -1,6 +1,7 @@
 export const darkTheme = {
   primary: '#2f3437',
-  secondary: '#444444',
+  secondary: '#25292B',
+  // secondary: '#444444',
   active: '#ffffff',
   font: '#ffffff',
   reverseFont: '#37352f',

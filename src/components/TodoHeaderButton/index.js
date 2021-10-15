@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, useRoute } from 'wouter'
-import { Button } from './TodoCreate.style'
+import { Button } from './TodoHeaderButton.style'
 
-export default function TodoCreateButton () {
+export default function TodoHeaderButton () {
   const [match] = useRoute('/')
 
   return (
