@@ -31,7 +31,12 @@ function App () {
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
       <AppS>
-        <TodoHeader toggleDarkMode={toggleDarkMode}>
+        <TodoHeader
+          toggleDarkMode={toggleDarkMode}
+          completedTasks={completedTasks}
+          notCompletedTasks={notCompletedTasks}
+          status={status}
+        >
           <TodoHeaderButton />
         </TodoHeader>
 

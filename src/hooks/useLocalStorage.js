@@ -17,7 +17,8 @@ export default function useLocalStorage (itemName, initialValue) {
       }
 
       setData(parsedItems)
-      setStatus('resolved')
+
+      setTimeout(() => setStatus('resolved'), 2000)
     } catch (error) {
       console.error(error)
       setStatus('rejected')

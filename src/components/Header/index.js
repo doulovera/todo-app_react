@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useRoute } from 'wouter'
 import { HeaderTop, Nav, Tab } from './Header.style.js'
 
-export default function TodoHeader ({ children, toggleDarkMode }) {
+export default function TodoHeader ({ children, toggleDarkMode, status, notCompletedTasks, completedTasks }) {
   const [match] = useRoute('/create')
 
   return (
@@ -21,8 +21,8 @@ export default function TodoHeader ({ children, toggleDarkMode }) {
       {
         !match
           ? (<Nav>
-          <Tab className={'active'}>ToDos {true && <span>5</span>}</Tab>
-          <Tab className={''}>Completed {true && <span>5</span>}</Tab>
+          <Tab className={'active'}>ToDos {status === 'resolved' && <span>{notCompletedTasks}</span>}</Tab>
+          <Tab className={''}>Completed {status === 'resolved' && <span>{completedTasks}</span>}</Tab>
         </Nav>)
           : ''
       }

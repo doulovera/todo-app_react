@@ -38,4 +38,8 @@ export const TodoItemS = styled.article`
     width: 20px;
     margin: 0 20px;
   }
+
+  &.isLoading {
+    background-color: gray;
+  }
 `

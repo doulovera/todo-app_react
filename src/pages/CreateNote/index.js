@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'wouter'
-import { InputS, TextareaS, ButtonS } from './CreateNote.style'
+import { TitleS, DescriptionS, ButtonS } from './CreateNote.style'
 
 // feat: CREAR INTERVAL PARA QUE GUARDE AUTOMÁTICAMENTE EL CONTENIDO EN OTRO ITEM DEL LOCALSTORAGE (TEMP_NOTE)
 export default function CreateNote ({ addTask }) {
@@ -23,16 +23,16 @@ export default function CreateNote ({ addTask }) {
   return (
     <section>
       <form style={{ padding: '0 20px' }} onSubmit={handleSubmit}>
-        <InputS
+        <TitleS
           type="text"
           placeholder="Write your tasks title"
           onChange={(e) => handleChange(e, setTaskTitle)}
         />
 
-        <TextareaS
+        <DescriptionS
           placeholder="# Your task in markdown!!"
           onChange={(e) => handleChange(e, setTaskDescription)}
-        ></TextareaS>
+        ></DescriptionS>
         <ButtonS type="submit">Save Note</ButtonS>
       </form>
     </section>
