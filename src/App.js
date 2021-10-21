@@ -12,30 +12,6 @@ import Note from 'pages/Note'
 import TodoHeaderButton from 'components/TodoHeaderButton'
 import { AppS } from 'styles/App.style'
 
-const FAKE_ARRAY = [
-  {
-    id: 1634015287752,
-    title: 'La propiedad text-overflow ha de ser especificada usando uno o dos valores. Si se define solo un valor, este determinará el comportamiento del overflow para el final de la línea (el extremo derecho en un texto izquierda-a-derecha o el extremo izquierdo en un texto derecha-a-izquierda)',
-    description: '# Hello world',
-    done: false,
-    color: 'blue'
-  },
-  {
-    id: 1634015289490,
-    title: 'Second task',
-    description: '# Bye world >:)',
-    done: true,
-    color: 'red'
-  },
-  {
-    id: 1634015289844,
-    title: 'Tercera tarea bro',
-    description: '# idunno bruh',
-    done: false,
-    color: 'orange'
-  }
-]
-
 function App () {
   const [isDarkMode, setIsDarkMode] = useState(true)
 
@@ -79,7 +55,7 @@ function App () {
         </Route>
 
         <Route path="/create">
-          <CreateNote />
+          <CreateNote addTask={addTask} />
         </Route>
 
       </AppS>
