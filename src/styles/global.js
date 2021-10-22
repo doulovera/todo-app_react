@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     --secondary: ${({ theme }) => theme.secondary};
     --font: ${({ theme }) => theme.font};
     --active: ${({ theme }) => theme.active};
+    --anchor: ${({ theme }) => theme.anchor};
     --reverse: ${({ theme }) => theme.reverse};
     --reverse-font: ${({ theme }) => theme.reverseFont};
 

@@ -1,7 +1,7 @@
 export const darkTheme = {
   primary: '#2f3437',
   secondary: '#25292B',
-  // secondary: '#444444',
+  anchor: '#56bfe7',
   active: '#ffffff',
   font: '#ffffff',
   reverseFont: '#37352f',
@@ -22,6 +22,7 @@ export const darkTheme = {
 export const lightTheme = {
   primary: '#ffffff',
   secondary: '#d3d3d3',
+  anchor: '#205468',
   active: '#37352f',
   font: '#37352f',
   reverseFont: '#ffffff',

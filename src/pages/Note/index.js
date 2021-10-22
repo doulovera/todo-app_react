@@ -10,7 +10,7 @@ export default function Note ({ id }) {
 
   return (
     <section style={{ padding: '0 20px' }}>
-      <TitleS>
+      <TitleS bgColor={task?.color}>
         {task?.title}
       </TitleS>
       <DescriptionS>
