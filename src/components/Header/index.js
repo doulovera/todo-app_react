@@ -3,7 +3,7 @@ import { Link, useRoute } from 'wouter'
 import { HeaderTop, Nav, Tab } from './Header.style.js'
 
 export default function TodoHeader ({ children, toggleDarkMode, status, notCompletedTasks, completedTasks }) {
-  const [match] = useRoute('/create')
+  const [match] = useRoute('/')
 
   return (
     <header style={{ marginBottom: '20px' }}>
@@ -19,7 +19,7 @@ export default function TodoHeader ({ children, toggleDarkMode, status, notCompl
         { children }
       </HeaderTop>
       {
-        !match
+        match
           ? (<Nav>
           <Tab className={'active'}>ToDos {status === 'resolved' && <span>{notCompletedTasks}</span>}</Tab>
           <Tab className={''}>Completed {status === 'resolved' && <span>{completedTasks}</span>}</Tab>
