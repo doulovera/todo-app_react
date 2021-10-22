@@ -4,4 +4,5 @@
 $ npm start
 ```
 
-Design based in [this post](https://pin.it/1kwvj7c)
+Design based in [this post](https://pin.it/1kwvj7c) (at first)
+Usign [Notion](https://notion.so/) colors
