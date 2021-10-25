@@ -15,7 +15,7 @@ export default function TodoList ({
 
       {status === 'pending' && onLoading()}
 
-      {status === 'resolved' && tasks.length === 0 && onEmpty()}
+      {(status === 'resolved' && tasks.length === 0) && onEmpty()}
 
       {status === 'resolved' && tasks.map(children)}
     </SectionS>

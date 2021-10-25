@@ -18,6 +18,7 @@ export default function useLocalStorage (itemName, initialValue) {
 
       setData(parsedItems)
 
+      // Simular conexión a la BB.DD
       setTimeout(() => setStatus('resolved'), 2000)
     } catch (error) {
       console.error(error)

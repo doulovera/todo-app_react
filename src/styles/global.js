@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     --reverse: ${({ theme }) => theme.reverse};
     --reverse-font: ${({ theme }) => theme.reverseFont};
 
-    --default: ${({ theme }) => theme.default};
+    --default: ${({ theme }) => theme.secondary};
     --gray: ${({ theme }) => theme.gray};
     --brown: ${({ theme }) => theme.brown};
     --orange: ${({ theme }) => theme.orange};

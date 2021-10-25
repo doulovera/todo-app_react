@@ -1,7 +1,9 @@
 import React from 'react'
 import useTasks from 'hooks/useTasks'
 import ReactMarkdown from 'react-markdown'
-import { TitleS, DescriptionS } from './Note.style'
+import { DescriptionS } from './Note.style'
+import NoteTitle from 'components/NoteTitle'
+import NoteDescription from 'components/NoteDescription'
 
 export default function Note ({ id }) {
   const { tasks } = useTasks()
@@ -10,14 +12,18 @@ export default function Note ({ id }) {
 
   return (
     <section style={{ padding: '0 20px' }}>
-      <TitleS bgColor={task?.color}>
-        {task?.title}
-      </TitleS>
-      <DescriptionS>
-        <ReactMarkdown linkTarget="_blank">
-          {task?.description}
-        </ReactMarkdown>
-      </DescriptionS>
+      <NoteTitle bgColor={task?.color}>
+        <h4 className="Note__title">
+          {task?.title}
+        </h4>
+      </NoteTitle>
+      <NoteDescription>
+        <div className="Note__description">
+          <ReactMarkdown linkTarget="_blank">
+            {task?.description}
+          </ReactMarkdown>
+        </div>
+      </NoteDescription>
     </section>
   )
 }
