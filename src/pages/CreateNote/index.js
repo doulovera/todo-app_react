@@ -2,29 +2,17 @@ import React, { useState } from 'react'
 import { useLocation } from 'wouter'
 import NoteTitle from 'components/NoteTitle'
 import NoteDescription from 'components/NoteDescription'
-import { ButtonS, NoteTitleContainer, NoteColorSelector, ColorsContainer, ColorOption } from './CreateNote.style'
-
-const COLORS = [
-  'default',
-  'gray',
-  'brown',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'purple',
-  'pink',
-  'red'
-]
+import { ButtonS, NoteTitleContainer } from './CreateNote.style'
+import ColorSelector from 'components/ColorSelector'
 
 // feat: CREAR INTERVAL PARA QUE GUARDE AUTOMÁTICAMENTE EL CONTENIDO EN OTRO ITEM DEL LOCALSTORAGE (TEMP_NOTE)
 export default function CreateNote ({ addTask }) {
-  const [isColorActive, setIsColorActive] = useState(false)
-
   // Form
   const [taskTitle, setTaskTitle] = useState('')
   const [taskDescription, setTaskDescription] = useState('')
+  const [taskColor, setTaskColor] = useState('default')
 
+  // eslint-disable-next-line no-unused-vars
   const [location, setLocation] = useLocation()
 
   const handleInputChange = (event, setState) => {
@@ -42,7 +30,7 @@ export default function CreateNote ({ addTask }) {
     <section>
       <form style={{ padding: '0 20px' }} onSubmit={handleSubmit}>
         <NoteTitleContainer>
-          <NoteTitle bgColor='default'>
+          <NoteTitle bgColor={taskColor}>
             <input
               type="text"
               className="Note__title"
@@ -50,20 +38,7 @@ export default function CreateNote ({ addTask }) {
               onChange={(e) => handleInputChange(e, setTaskTitle)}
             />
           </NoteTitle>
-          <NoteColorSelector
-            type="button"
-            isColorActive={isColorActive} onClick={() => setIsColorActive(!isColorActive)}
-          />
-          <ColorsContainer className={isColorActive ? 'ColorsContainer-active' : ''} isColorActive={isColorActive}>
-            {
-              COLORS.map(color => (
-                <ColorOption key={color} bgColor={color}>
-                  <span className="ColorOption__square"></span>
-                  <p>{color}</p>
-                </ColorOption>
-              ))
-            }
-          </ColorsContainer>
+          <ColorSelector taskColor={taskColor} setTaskColor={setTaskColor} />
         </NoteTitleContainer>
 
         <NoteDescription>
