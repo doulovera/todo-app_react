@@ -50,17 +50,20 @@ export default function CreateNote ({ addTask }) {
               onChange={(e) => handleInputChange(e, setTaskTitle)}
             />
           </NoteTitle>
-          <NoteColorSelector type="button" isColorActive={isColorActive} onClick={() => setIsColorActive(!isColorActive)} />
-            <ColorsContainer isColorActive={isColorActive}>
-              {
-                COLORS.map(color => (
-                  <ColorOption key={color} bgColor={color}>
-                    <span className="ColorOption__square"></span>
-                    <p>{color}</p>
-                  </ColorOption>
-                ))
-              }
-            </ColorsContainer>
+          <NoteColorSelector
+            type="button"
+            isColorActive={isColorActive} onClick={() => setIsColorActive(!isColorActive)}
+          />
+          <ColorsContainer className={isColorActive ? 'ColorsContainer-active' : ''} isColorActive={isColorActive}>
+            {
+              COLORS.map(color => (
+                <ColorOption key={color} bgColor={color}>
+                  <span className="ColorOption__square"></span>
+                  <p>{color}</p>
+                </ColorOption>
+              ))
+            }
+          </ColorsContainer>
         </NoteTitleContainer>
 
         <NoteDescription>

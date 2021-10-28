@@ -46,14 +46,16 @@ export const ColorsContainer = styled.div`
   position: absolute;
   top: 55px;
   right: 0;
-  display: ${(props) => props.isColorActive ? 'block' : 'none'};
-  opacity: ${(props) => props.isColorActive ? '1' : '0'};
+  display: none;
   height: auto;
   width: 140px;
   background-color: var(--lighter);
   border-radius: 3px;
   box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
-  transition: opacity 1s ease-in-out;
+
+  &.ColorsContainer-active {
+    display: block;
+  }
 `
 
 export const ColorOption = styled.div`
