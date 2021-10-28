@@ -4,11 +4,13 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --primary: ${({ theme }) => theme.primary};
     --secondary: ${({ theme }) => theme.secondary};
+    --lighter: ${({ theme }) => theme.lighter};
     --font: ${({ theme }) => theme.font};
     --active: ${({ theme }) => theme.active};
     --anchor: ${({ theme }) => theme.anchor};
     --reverse: ${({ theme }) => theme.reverse};
     --reverse-font: ${({ theme }) => theme.reverseFont};
+
 
     --default: ${({ theme }) => theme.secondary};
     --gray: ${({ theme }) => theme.gray};

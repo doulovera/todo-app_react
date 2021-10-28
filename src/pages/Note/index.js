@@ -1,7 +1,6 @@
 import React from 'react'
 import useTasks from 'hooks/useTasks'
 import ReactMarkdown from 'react-markdown'
-import { DescriptionS } from './Note.style'
 import NoteTitle from 'components/NoteTitle'
 import NoteDescription from 'components/NoteDescription'
 
