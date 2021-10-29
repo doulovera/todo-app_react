@@ -7,7 +7,6 @@ import ColorSelector from 'components/ColorSelector'
 
 // feat: CREAR INTERVAL PARA QUE GUARDE AUTOMÁTICAMENTE EL CONTENIDO EN OTRO ITEM DEL LOCALSTORAGE (TEMP_NOTE)
 export default function CreateNote ({ addTask }) {
-  // Form
   const [taskTitle, setTaskTitle] = useState('')
   const [taskDescription, setTaskDescription] = useState('')
   const [taskColor, setTaskColor] = useState('default')
@@ -22,7 +21,7 @@ export default function CreateNote ({ addTask }) {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (taskTitle.trim() === '') return alert('Please, don\'t leave empty the title camp') // Tiene que poner el input en rojo
-    addTask(taskTitle, taskDescription, 'blue')
+    addTask(taskTitle, taskDescription, taskColor)
     setLocation('/')
   }
 

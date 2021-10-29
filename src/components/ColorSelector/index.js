@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NoteColorSelector, ColorsContainer, ColorOption } from './ColorSelector.style'
 
 const COLORS = [
@@ -15,12 +15,28 @@ const COLORS = [
 ]
 
 export default function ColorSelector ({ taskColor, setTaskColor }) {
+  const myRef = useRef()
+
   const [isColorOpen, setIsColorOpen] = useState(false)
 
   const handleColorChange = (color) => {
     setTaskColor(color)
     setIsColorOpen(false)
   }
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (isColorOpen && myRef.current && !myRef.current.contains(event.target)) {
+        return setIsColorOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick)
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [isColorOpen])
 
   return (
     <>
@@ -33,6 +49,7 @@ export default function ColorSelector ({ taskColor, setTaskColor }) {
       </NoteColorSelector>
       <ColorsContainer
         className={isColorOpen ? 'ColorsContainer-active' : ''} isColorActive={isColorOpen}
+        ref={myRef}
       >
         {
           COLORS.map(color => (
