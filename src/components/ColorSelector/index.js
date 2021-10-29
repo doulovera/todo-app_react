@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { NoteColorSelector, ColorsContainer, ColorOption } from './ColorSelector.style'
+import { NoteColorSelector, ColorsContainer, ColorOption, LittleSquare } from './ColorSelector.style'
 
 const COLORS = [
   'default',
@@ -45,7 +45,12 @@ export default function ColorSelector ({ taskColor, setTaskColor }) {
         isColorActive={isColorOpen} onClick={() => setIsColorOpen(!isColorOpen)}
         bgColor={taskColor}
       >
-        <span className="ColorOption__square"></span>
+        <div className="ColorOption__square-container">
+          <LittleSquare className="ColorOption__square" bgColor={'yellow'}></LittleSquare>
+          <LittleSquare className="ColorOption__square" bgColor={'blue'}></LittleSquare>
+          <LittleSquare className="ColorOption__square" bgColor={'red'}></LittleSquare>
+          <LittleSquare className="ColorOption__square" bgColor={'purple'}></LittleSquare>
+        </div>
       </NoteColorSelector>
       <ColorsContainer
         className={isColorOpen ? 'ColorsContainer-active' : ''} isColorActive={isColorOpen}

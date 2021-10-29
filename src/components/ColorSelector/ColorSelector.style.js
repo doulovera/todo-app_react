@@ -2,9 +2,13 @@ import styled from 'styled-components'
 
 export const NoteColorSelector = styled.button`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   height: 50px;
   width: 80px;
   min-width: 74px;
+  padding: 0 10px;
   background-color: var(--secondary);
   color: var(--font);
   outline: 0;
@@ -21,11 +25,20 @@ export const NoteColorSelector = styled.button`
     font-size: 1.4rem;
   }
 
-  & span {
+  & .ColorOption__square-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
     height: 30px;
     width: 30px;
-    background-color: ${(props) => `var(--${props.bgColor})`};
   }
+`
+
+export const LittleSquare = styled.span`
+  display: block;
+  height: 13px;
+  width: 13px;
+  background-color: ${(props) => `var(--${props.bgColor})`};
 `
 
 export const ColorsContainer = styled.div`
@@ -55,7 +68,7 @@ export const ColorOption = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #000;
+    background-color: var(--secondary);
   }
 
   & span {
