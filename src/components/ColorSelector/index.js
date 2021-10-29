@@ -39,7 +39,7 @@ export default function ColorSelector ({ taskColor, setTaskColor }) {
   }, [isColorOpen])
 
   return (
-    <>
+    <div ref={myRef}>
       <NoteColorSelector
         type="button"
         isColorActive={isColorOpen} onClick={() => setIsColorOpen(!isColorOpen)}
@@ -49,7 +49,6 @@ export default function ColorSelector ({ taskColor, setTaskColor }) {
       </NoteColorSelector>
       <ColorsContainer
         className={isColorOpen ? 'ColorsContainer-active' : ''} isColorActive={isColorOpen}
-        ref={myRef}
       >
         {
           COLORS.map(color => (
@@ -64,6 +63,6 @@ export default function ColorSelector ({ taskColor, setTaskColor }) {
           ))
         }
       </ColorsContainer>
-    </>
+    </div>
   )
 }
