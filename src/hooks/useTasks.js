@@ -10,22 +10,21 @@ export default function useTasks () {
     const newTask = [
       ...tasks,
       {
-        id: Date.now(),
+        id: parseInt(Date.now(), 10),
         title,
         description,
         done: false,
         color
       }
     ]
-
     saveTasks(newTask)
   }
 
   const removeTask = (taskId) => {
-    const findTaskIndex = tasks.findIndex(task => task.id === taskId)
-    const newTasks = [...tasks]
-    newTasks.splice(findTaskIndex, 1)
-    saveTasks(newTasks)
+    let id = taskId
+    if (typeof (taskId) === 'string') id = parseInt(taskId, 10)
+    const filterTask = tasks.filter(task => task.id !== id)
+    saveTasks(filterTask)
   }
 
   const toggleCompleteTask = (taskId) => {

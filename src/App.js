@@ -21,7 +21,6 @@ function App () {
     notCompletedTasks,
     status,
     addTask,
-    removeTask,
     toggleCompleteTask
   } = useTasks()
 

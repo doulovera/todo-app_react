@@ -59,7 +59,7 @@ export const LabelS = styled.label`
     margin-top: 0.6rem;
   }
   
-  & .Note__description ul {
+  & .Note__description :is(ul, ol) {
     padding-left: 30px;
   }
 
