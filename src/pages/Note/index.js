@@ -5,11 +5,18 @@ import NoteTitle from 'components/NoteTitle'
 import NoteDescription from 'components/NoteDescription'
 import { ButtonGroup, ButtonS } from './Note.style'
 
-export default function Note ({ id }) {
-  const { tasks, removeTask } = useTasks()
-  const task = tasks.find(task => task.id === parseInt(id, 10))
-  // const { color, title, description, done } = task
+export default function Note ({ id, onLoading, on404 }) {
+  const { removeTask, searchSingleTask } = useTasks()
 
+  const { task, status } = searchSingleTask(id)
+
+  // Cargando
+  if (status === 'pending') return onLoading()
+
+  // Si no existe
+  if (!task) return on404()
+
+  // La nota
   return (
     <section style={{ padding: '0 20px' }}>
       <NoteTitle bgColor={task?.color}>
@@ -28,7 +35,7 @@ export default function Note ({ id }) {
         <ButtonS onClick={() => removeTask(id)}>
           Remove
         </ButtonS>
-        <ButtonS onClick={() => removeTask(id)}>
+        <ButtonS onClick={() => console.log('toggleComplete')}>
           Complete
         </ButtonS>
       </ButtonGroup>

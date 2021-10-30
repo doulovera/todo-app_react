@@ -34,6 +34,15 @@ export default function useTasks () {
     saveTasks(newTasks)
   }
 
+  const searchSingleTask = (taskId) => {
+    let status = 'pending'
+    const task = tasks.find(task => {
+      status = 'resolved'
+      return task.id === parseInt(taskId, 10)
+    })
+    return { task, status }
+  }
+
   return {
     tasks,
     completedTasks,
@@ -41,6 +50,7 @@ export default function useTasks () {
     status,
     addTask,
     removeTask,
-    toggleCompleteTask
+    toggleCompleteTask,
+    searchSingleTask
   }
 }

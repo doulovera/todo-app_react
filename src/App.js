@@ -45,7 +45,7 @@ function App () {
             status={status}
             tasks={tasks}
             onError={() => <h3 className="TodoList__alert TodoList__alert-error">An error has ocurred...</h3>}
-            onLoading={() => <TodoItem isLoading={true} />}
+            onLoading={() => <TodoItem isLoading />}
             onEmpty={() => <h3 className="TodoList__alert">Use the &apos;+&apos; button to add a Task!</h3>}
           >
             { (task) => <TodoItem key={task.id} {...task} /> }
@@ -54,7 +54,13 @@ function App () {
 
         <Route path="/note/:id">
           {
-            (params) => <Note id={params.id} />
+            (params) => (
+              <Note
+                id={params.id}
+                onLoading={() => <h3>Loading...</h3>}
+                on404={() => <h3>This note doesn&apos;t exists</h3>}
+              />
+            )
           }
         </Route>
 
