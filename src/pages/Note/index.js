@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLocation } from 'wouter'
-import useTasks from 'hooks/useTasks'
 import ReactMarkdown from 'react-markdown'
 import NoteTitle from 'components/NoteTitle'
 import NoteDescription from 'components/NoteDescription'

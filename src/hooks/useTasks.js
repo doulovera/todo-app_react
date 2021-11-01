@@ -3,8 +3,8 @@ import useLocalStorage from './useLocalStorage'
 export default function useTasks () {
   const { status, data: tasks, saveItems: saveTasks } = useLocalStorage('NOTE_TAKER_V1', [])
 
-  const completedTasks = tasks.filter(task => !!task.done).length
-  const notCompletedTasks = tasks.filter(task => !task.done).length
+  const completedTasks = tasks.filter(task => !!task.done)
+  const notCompletedTasks = tasks.filter(task => !task.done)
 
   const addTask = (title, description, color) => {
     const newTask = [

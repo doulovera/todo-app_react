@@ -34,8 +34,8 @@ function App () {
       <AppS>
         <TodoHeader
           toggleDarkMode={toggleDarkMode}
-          completedTasks={completedTasks}
-          notCompletedTasks={notCompletedTasks}
+          completedTasks={completedTasks.length}
+          notCompletedTasks={notCompletedTasks.length}
           status={status}
         >
           <TodoHeaderButton />
@@ -45,12 +45,25 @@ function App () {
           <TodoList
             className="TodoList"
             status={status}
-            tasks={tasks}
+            tasks={notCompletedTasks}
             onError={() => <h3 className="TodoList__alert TodoList__alert-error">An error has ocurred...</h3>}
             onLoading={() => <TodoItem isLoading />}
             onEmpty={() => <h3 className="TodoList__alert">Use the &apos;+&apos; button to add a Task!</h3>}
           >
-            { (task) => <TodoItem key={task.id} {...task} /> }
+            { (task) => <TodoItem key={task.id} {...task} toggleCompleteTask={toggleCompleteTask} /> }
+          </TodoList>
+        </Route>
+
+        <Route path="/completed">
+          <TodoList
+            className="TodoList"
+            status={status}
+            tasks={completedTasks}
+            onError={() => <h3 className="TodoList__alert TodoList__alert-error">An error has ocurred...</h3>}
+            onLoading={() => <TodoItem isLoading />}
+            onEmpty={() => <h3 className="TodoList__alert">Use the &apos;+&apos; button to add a Task!</h3>}
+          >
+            { (task) => <TodoItem key={task.id} {...task} toggleCompleteTask={toggleCompleteTask} /> }
           </TodoList>
         </Route>
 
@@ -59,10 +72,10 @@ function App () {
             (params) => (
               <Note
                 id={params.id}
-                onLoading={() => <h3>Loading...</h3>}
-                on404={() => <h3>This note doesn&apos;t exists</h3>}
                 removeTask={removeTask}
                 searchSingleTask={searchSingleTask}
+                onLoading={() => <h3>Loading...</h3>}
+                on404={() => <h3>This note doesn&apos;t exists</h3>}
               />
             )
           }

@@ -13,7 +13,6 @@ export const Button = styled.a`
   text-decoration: none;
   border: 2px solid var(--reverse);
   border-radius: 50%;
-  outline: 0;
   cursor: pointer;
   background-color: #fff;
   overflow: hidden;

@@ -6,7 +6,6 @@ export const ButtonS = styled.button`
   width: 100%;
   background-color: var(--reverse);
   border: 0;
-  outline: 0;
   color: var(--reverse-font);
   font-size: 1.4rem;
   font-weight: bold;

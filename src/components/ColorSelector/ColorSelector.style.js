@@ -11,7 +11,6 @@ export const NoteColorSelector = styled.button`
   padding: 0 10px;
   background-color: var(--secondary);
   color: var(--font);
-  outline: 0;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
