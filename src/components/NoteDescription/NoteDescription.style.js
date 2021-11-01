@@ -18,6 +18,7 @@ export const LabelS = styled.label`
     font-size: 1rem;
     resize: none;
     cursor: auto;
+    overflow-x: auto;
   }
 
   // Markdown things
@@ -67,8 +68,17 @@ export const LabelS = styled.label`
   & .Note__description a {
     color: var(--anchor);
   }
-
+  
   & .Note__description :is(h1, h2, h3, h4, h5, h6, p):first-child {
     margin-top: 0;
+  }
+
+  & .Note__description pre {
+    font-family: monospace;
+    background-color: var(--reverse);
+    color: var(--reverse-font);
+  }
+  & .Note__description pre code {
+    background-color: var(--reverse);
   }
 `
