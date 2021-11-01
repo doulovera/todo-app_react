@@ -20,8 +20,15 @@ export const HeaderTop = styled.div`
 
   & h1 button {
     margin-left: 10px;
+    padding: 3px;
     background: none;
-    border: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  & h1 button:hover {
+    border: 2px dashed var(--reverse);
   }
 `
 

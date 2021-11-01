@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLocation, useRoute } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import { HeaderTop, Nav, Tab } from './Header.style.js'
 
 export default function TodoHeader ({ children, toggleDarkMode, status, notCompletedTasks, completedTasks }) {
