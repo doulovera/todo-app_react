@@ -21,6 +21,8 @@ function App () {
     notCompletedTasks,
     status,
     addTask,
+    removeTask,
+    searchSingleTask,
     toggleCompleteTask
   } = useTasks()
 
@@ -59,6 +61,8 @@ function App () {
                 id={params.id}
                 onLoading={() => <h3>Loading...</h3>}
                 on404={() => <h3>This note doesn&apos;t exists</h3>}
+                removeTask={removeTask}
+                searchSingleTask={searchSingleTask}
               />
             )
           }

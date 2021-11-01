@@ -1,14 +1,19 @@
 import React from 'react'
+import { useLocation } from 'wouter'
 import useTasks from 'hooks/useTasks'
 import ReactMarkdown from 'react-markdown'
 import NoteTitle from 'components/NoteTitle'
 import NoteDescription from 'components/NoteDescription'
 import { ButtonGroup, ButtonS } from './Note.style'
 
-export default function Note ({ id, onLoading, on404 }) {
-  const { removeTask, searchSingleTask } = useTasks()
-
+export default function Note ({ id, onLoading, on404, removeTask, searchSingleTask }) {
+  const [location, setLocation] = useLocation()
   const { task, status } = searchSingleTask(id)
+
+  const handleRemove = () => {
+    removeTask(id)
+    setLocation('/')
+  }
 
   // Cargando
   if (status === 'pending') return onLoading()
@@ -32,7 +37,7 @@ export default function Note ({ id, onLoading, on404 }) {
         </div>
       </NoteDescription>
       <ButtonGroup>
-        <ButtonS onClick={() => removeTask(id)}>
+        <ButtonS onClick={handleRemove}>
           Remove
         </ButtonS>
         <ButtonS onClick={() => console.log('toggleComplete')}>

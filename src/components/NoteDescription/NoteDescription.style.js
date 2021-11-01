@@ -17,6 +17,7 @@ export const LabelS = styled.label`
     color: var(--font);
     font-size: 1rem;
     resize: none;
+    cursor: auto;
   }
 
   // Markdown things
