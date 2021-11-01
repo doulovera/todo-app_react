@@ -7,6 +7,8 @@ export const HeaderTop = styled.div`
   padding: 0 20px;
 
   & h1 {
+    display: flex;
+    align-items: center;
     flex: 1;
     font-size: 2rem;
   }
@@ -14,6 +16,12 @@ export const HeaderTop = styled.div`
   & h1 a {
     color: var(--font);
     text-decoration: none;
+  }
+
+  & h1 button {
+    margin-left: 10px;
+    background: none;
+    border: 0;
   }
 `
 
@@ -23,14 +31,16 @@ export const Nav = styled.nav`
   border-bottom: 2px solid var(--secondary);
 `
 
-export const Tab = styled.div`
+export const Tab = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   height: 100%;
   width: 100%;
+  color: var(--font);
   text-align: center;
+  text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
