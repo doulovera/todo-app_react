@@ -28,10 +28,14 @@ export default function useTasks () {
   }
 
   const toggleCompleteTask = (taskId) => {
-    const findTaskIndex = tasks.findIndex(task => task.id === taskId)
-    const newTasks = [...tasks]
-    newTasks[findTaskIndex].done = !newTasks[findTaskIndex].done
-    saveTasks(newTasks)
+    try {
+      const findTaskIndex = tasks.findIndex(task => task.id === taskId)
+      const newTasks = [...tasks]
+      newTasks[findTaskIndex].done = !newTasks[findTaskIndex].done
+      saveTasks(newTasks)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   const searchSingleTask = (taskId) => {

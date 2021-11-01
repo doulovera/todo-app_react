@@ -6,7 +6,7 @@ import NoteDescription from 'components/NoteDescription'
 import { ButtonGroup, ButtonS } from './Note.style'
 
 export default function Note ({ id, onLoading, on404, removeTask, searchSingleTask }) {
-  const [location, setLocation] = useLocation()
+  const [, setLocation] = useLocation()
   const { task, status } = searchSingleTask(id)
 
   const handleRemove = () => {
@@ -38,9 +38,6 @@ export default function Note ({ id, onLoading, on404, removeTask, searchSingleTa
       <ButtonGroup>
         <ButtonS onClick={handleRemove}>
           Remove
-        </ButtonS>
-        <ButtonS onClick={() => console.log('toggleComplete')}>
-          Complete
         </ButtonS>
       </ButtonGroup>
     </section>

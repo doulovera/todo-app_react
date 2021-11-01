@@ -11,8 +11,7 @@ export default function CreateNote ({ addTask }) {
   const [taskDescription, setTaskDescription] = useState('')
   const [taskColor, setTaskColor] = useState('default')
 
-  // eslint-disable-next-line no-unused-vars
-  const [location, setLocation] = useLocation()
+  const [, setLocation] = useLocation()
 
   const handleInputChange = (event, setState) => {
     setState(event.target.value)
