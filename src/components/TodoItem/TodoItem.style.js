@@ -34,9 +34,17 @@ export const TodoItemS = styled.article`
     font-size: 1rem;
   }
 
-  & input {
-    width: 20px;
+  & a span.completed {
+    color: #7b828c;
+  }
+
+  & button {
+    width: 32px;
     margin: 0 20px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   &.isLoading {
