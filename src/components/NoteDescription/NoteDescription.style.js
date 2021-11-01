@@ -18,7 +18,6 @@ export const LabelS = styled.label`
     font-size: 1rem;
     resize: none;
     cursor: auto;
-    overflow-x: auto;
   }
 
   // Markdown things
@@ -74,11 +73,15 @@ export const LabelS = styled.label`
   }
 
   & .Note__description pre {
+    margin: 5px 0;
+    padding: 5px 8px;
     font-family: monospace;
-    background-color: var(--reverse);
     color: var(--reverse-font);
-  }
-  & .Note__description pre code {
     background-color: var(--reverse);
+    border-radius: 8px;
+    overflow-x: auto;
   }
+  /* & .Note__description pre code {
+    background-color: var(--reverse);
+  } */
 `
