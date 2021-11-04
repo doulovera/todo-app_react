@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export default function Dash (props) {
+export default function Check (props) {
   return (
     <svg
       width="1em"
@@ -11,7 +11,7 @@ export default function Dash (props) {
     >
       <path
         fillRule="evenodd"
-        d="M2 7.75A.75.75 0 012.75 7h10a.75.75 0 010 1.5h-10A.75.75 0 012 7.75z"
+        d="M3.404 3.404a6.5 6.5 0 109.192 9.192 6.5 6.5 0 00-9.192-9.192zm-1.06 10.253A8 8 0 1113.656 2.343 8 8 0 012.343 13.657z"
       />
     </svg>
   )

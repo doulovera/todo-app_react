@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'wouter'
-import Check from 'components/Icons/Check'
+import CircleBold from 'components/Icons/CircleBold'
 import { TodoItemS } from './TodoItem.style'
-import Dash from 'components/Icons/Dash'
+import Check from 'components/Icons/Check'
 
 export default function TodoItem ({
   id,
@@ -10,7 +10,8 @@ export default function TodoItem ({
   color,
   done,
   isLoading = false,
-  toggleCompleteTask
+  toggleCompleteTask,
+  theme
 }) {
   return (
     <TodoItemS color={color} className={isLoading ? 'isLoading' : ''}>
@@ -24,8 +25,8 @@ export default function TodoItem ({
       <button onClick={() => toggleCompleteTask(id)}>
         {
           done
-            ? <Dash fill='#000' />
-            : <Check fill='#39d353' />
+            ? <Check fill={theme ? '#fff' : '#000'} />
+            : <CircleBold fill={theme ? '#fff' : '#000'} />
         }
       </button>
     </TodoItemS>

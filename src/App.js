@@ -16,7 +16,6 @@ function App () {
   const [isDarkMode, setIsDarkMode] = useState(true)
 
   const {
-    tasks,
     completedTasks,
     notCompletedTasks,
     status,
@@ -50,7 +49,7 @@ function App () {
             onLoading={() => <TodoItem isLoading />}
             onEmpty={() => <h3 className="TodoList__alert">Use the &apos;+&apos; button to add a Task!</h3>}
           >
-            { (task) => <TodoItem key={task.id} {...task} toggleCompleteTask={toggleCompleteTask} /> }
+            { (task) => <TodoItem key={task.id} {...task} toggleCompleteTask={toggleCompleteTask} theme={isDarkMode} /> }
           </TodoList>
         </Route>
 
@@ -61,7 +60,7 @@ function App () {
             tasks={completedTasks}
             onError={() => <h3 className="TodoList__alert TodoList__alert-error">An error has ocurred...</h3>}
             onLoading={() => <TodoItem isLoading />}
-            onEmpty={() => <h3 className="TodoList__alert">Use the &apos;+&apos; button to add a Task!</h3>}
+            onEmpty={() => <h3 className="TodoList__alert">You have no completed tasks! 😦</h3>}
           >
             { (task) => <TodoItem key={task.id} {...task} toggleCompleteTask={toggleCompleteTask} /> }
           </TodoList>
